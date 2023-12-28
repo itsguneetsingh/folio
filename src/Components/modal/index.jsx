@@ -10,7 +10,7 @@ const scaleAnimation = {
     closed: {scale: 0, x:"-50%", y:"-50%", transition: {duration: 0.4, ease: [0.32, 0, 0.67, 0]}}
 }
 
-export default function index({modal, projects, link}) {
+export default function index({modal, projects}) {
 
   const { active, index } = modal;
   const modalContainer = useRef(null);
@@ -40,7 +40,7 @@ export default function index({modal, projects, link}) {
   }, [])
 
   const openProject = (link) => {
-    // Replace 'https://www.linkedin.com/in/your-profile' with your LinkedIn profile URL
+    // console.log(link)
     window.open(`${link}`, '_blank');
   };
 
@@ -50,10 +50,9 @@ export default function index({modal, projects, link}) {
             <div style={{top: index * -100 + "%"}} className={styles.modalSlider}>
             {
                 projects.map( (project, index) => {
-                const { src, color } = project
-                console.log(src);
-                return <div className={styles.modal} style={{backgroundColor: color}} key={`modal_${index}`}>
-                    <img 
+                const { src, color, link } = project
+                return <div  className={styles.modal} style={{backgroundColor: color}} key={`modal_${index}`}>
+                    <img
                     src={`/${src}`}
                     width={300}
                     height={300}
@@ -64,8 +63,8 @@ export default function index({modal, projects, link}) {
             }
             </div>
         </motion.div>
-        {/* <motion.div ref={cursor} className={styles.cursor} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}></motion.div>
-        <motion.div onClick={openProject(link)} ref={cursorLabel} className={styles.cursorLabel} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}>View</motion.div> */}
+        <motion.div  ref={cursor} className={styles.cursor} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}></motion.div>
+        <motion.div ref={cursorLabel} className={styles.cursorLabel} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}>View</motion.div>
     </>
   )
 }
