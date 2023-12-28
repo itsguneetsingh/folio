@@ -6,7 +6,7 @@ import Modal from './modal';
 const projects = [
   {
     title: "EcoAir",
-    src: "AQI.png",
+    src: "aqi.png",
     color: "#15011e",
     description: "An elegant and intuitive Android application \ndesigned and developed to track Air Quality \nIndex (AQI) in remote areas.",
     link: "https://github.com/itsguneetsingh/EcoAir"
