@@ -30,7 +30,7 @@ const projects = [
     src: "Folio.png",
     color: "#15011e",
     description: "Designed and developed a portfolio \nwebsite to showcase my projects and \nachievements, using React.js",
-    link: ""
+    link: "https://folio-jade.vercel.app/"
   }
 ]
 
@@ -43,7 +43,7 @@ export default function Projects() {
     <div className={styles.body}>
       {
         projects.map( (project, index) => {
-          return <Project index={index} title={project.title} description={project.description} setModal={setModal} key={index}/>
+          return <Project index={index} title={project.title} description={project.description} link={project.link} setModal={setModal} key={index}/>
         })
       }
     </div>
