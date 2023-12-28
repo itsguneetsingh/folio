@@ -53,7 +53,7 @@ export default function index({modal, projects, link}) {
                 const { src, color } = project
                 return <div className={styles.modal} style={{backgroundColor: color}} key={`modal_${index}`}>
                     <img 
-                    src={`src/assets/${src}`}
+                    src={`/public/${src}`}
                     width={300}
                     height={300}
                     alt="image"
